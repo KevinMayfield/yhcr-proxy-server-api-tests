@@ -58,7 +58,7 @@
 									"        pm.expect(entry.name[0].family.toLowerCase()).to.eql(\"ALIZADEH\".toLowerCase()) && ",
 									"            pm.expect(entry.name[0].given[0].toLowerCase()).to.eql(\"MUZNA\".toLowerCase()) && ",
 									"                pm.expect(entry.birthDate).to.eql(\"1983-07-18\") && ",
-									"                    pm.expect(entry.gender).to.eql(\"female\");",
+									"                    pm.expect(entry.gender).to.eql(\"unknown\");",
 									"});",
 									"//Set the test patient id environment variable...",
 									"var jsonData = pm.response.json();",
@@ -247,7 +247,7 @@
 									"    var jsonData = pm.response.json();",
 									"    var entry = jsonData.entry[0].resource; ",
 									"        pm.expect(entry.name[0].family.toLowerCase()).to.eql(\"CARTY\".toLowerCase()) && ",
-									"            pm.expect(entry.name[0].given[0].toLowerCase()).to.eql(\"LORI\".toLowerCase()) && ",
+									"            pm.expect(entry.name[0].given[0].toLowerCase()).to.eql(\"GLADYS\".toLowerCase()) && ",
 									"                pm.expect(entry.birthDate).to.eql(\"1983-05-01\") && ",
 									"                    pm.expect(entry.gender).to.eql(\"female\");",
 									"});",
@@ -435,7 +435,7 @@
 									"        pm.expect(entry.name[0].family.toLowerCase()).to.eql(\"HUXLEY\".toLowerCase()) && ",
 									"            pm.expect(entry.name[0].given[0].toLowerCase()).to.eql(\"ALISON\".toLowerCase()) && ",
 									"                pm.expect(entry.birthDate).to.eql(\"1986-07-23\") && ",
-									"                    pm.expect(entry.gender).to.eql(\"female\");",
+									"                    pm.expect(entry.gender).to.eql(\"other\");",
 									"});",
 									""
 								],
@@ -527,8 +527,8 @@
 									"    var entry = jsonData.entry[0].resource; ",
 									"        pm.expect(entry.name[0].family.toLowerCase()).to.eql(\"LOPEZ\".toLowerCase()) && ",
 									"            pm.expect(entry.name[0].given[0].toLowerCase()).to.eql(\"LISA\".toLowerCase()) && ",
-									"                pm.expect(entry.birthDate).to.eql(\"1980-11-29\") && ",
-									"                    pm.expect(entry.gender).to.eql(\"female\");",
+									"                pm.expect(entry.birthDate).to.eql(\"1990-11-29\") && ",
+									"                    pm.expect(entry.gender).to.eql(\"other\");",
 									"});",
 									""
 								],
@@ -620,7 +620,7 @@
 									"    var entry = jsonData.entry[0].resource; ",
 									"        pm.expect(entry.name[0].family.toLowerCase()).to.eql(\"MANTON\".toLowerCase()) && ",
 									"            pm.expect(entry.name[0].given[0].toLowerCase()).to.eql(\"HEIDI\".toLowerCase()) && ",
-									"                pm.expect(entry.birthDate).to.eql(\"1985-04-29\") && ",
+									"                pm.expect(entry.birthDate).to.eql(\"1995-04-29\") && ",
 									"                    pm.expect(entry.gender).to.eql(\"female\");",
 									"});",
 									""
@@ -1061,7 +1061,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{proxy_server_address}}{{base_fhir_path}}/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9657702070&_include=Patient:general-Practitioner",
+							"raw": "{{proxy_server_address}}{{base_fhir_path}}/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9657702070&_include=Patient:general-practitioner",
 							"host": [
 								"{{proxy_server_address}}{{base_fhir_path}}"
 							],
@@ -1075,7 +1075,7 @@
 								},
 								{
 									"key": "_include",
-									"value": "Patient:general-Practitioner"
+									"value": "Patient:general-practitioner"
 								}
 							]
 						}
@@ -1171,7 +1171,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{proxy_server_address}}{{base_fhir_path}}/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9657702070&_include=Patient:Organization",
+							"raw": "{{proxy_server_address}}{{base_fhir_path}}/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9657702070&_include=Patient:organization",
 							"host": [
 								"{{proxy_server_address}}{{base_fhir_path}}"
 							],
@@ -1185,7 +1185,7 @@
 								},
 								{
 									"key": "_include",
-									"value": "Patient:Organization"
+									"value": "Patient:organization"
 								}
 							]
 						}
@@ -1306,7 +1306,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{proxy_server_address}}{{base_fhir_path}}/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9657702070&_include=Patient:Organization&_include=Patient:general-Practitioner",
+							"raw": "{{proxy_server_address}}{{base_fhir_path}}/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9657702070&_include=Patient:organization&_include=Patient:general-practitioner",
 							"host": [
 								"{{proxy_server_address}}{{base_fhir_path}}"
 							],
@@ -1320,11 +1320,11 @@
 								},
 								{
 									"key": "_include",
-									"value": "Patient:Organization"
+									"value": "Patient:organization"
 								},
 								{
 									"key": "_include",
-									"value": "Patient:general-Practitioner"
+									"value": "Patient:general-practitioner"
 								}
 							]
 						}
@@ -1763,7 +1763,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{proxy_server_address}}{{base_fhir_path}}/Encounter?subject:identifier=https://fhir.nhs.uk/Id/nhs-number|9657702070",
+							"raw": "{{proxy_server_address}}{{base_fhir_path}}/Encounter?subject.identifier=https://fhir.nhs.uk/Id/nhs-number|9657702070",
 							"host": [
 								"{{proxy_server_address}}{{base_fhir_path}}"
 							],
@@ -1772,7 +1772,7 @@
 							],
 							"query": [
 								{
-									"key": "subject:identifier",
+									"key": "subject.identifier",
 									"value": "https://fhir.nhs.uk/Id/nhs-number|9657702070"
 								}
 							]
